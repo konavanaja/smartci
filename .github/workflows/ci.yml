@@ -28,7 +28,8 @@ jobs:
         with:
           path: ~/.cache/pip
           key: pip-${{ runner.os }}-${{ hashFiles('requirements.txt') }}
-          
+                    restore-keys: |
+                       pip-${{ runner.os }}-
       - name: Install dependencies
         run: pip install -r requirements.txt
 
