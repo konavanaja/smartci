@@ -49,3 +49,10 @@ jobs:
         with:
           name: test-results
           path: test-results.xml
+                - name: Publish test summary
+        if: always()
+        uses: dorny/test-reporter@v2
+        with:
+          name: Python Test Results
+          path: test-results.xml
+          reporter: java-junit
